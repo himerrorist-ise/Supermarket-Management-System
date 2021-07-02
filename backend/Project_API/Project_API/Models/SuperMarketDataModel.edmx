@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SuperMarketDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BillTable">
+          <Key>
+            <PropertyRef Name="billID" />
+          </Key>
+          <Property Name="billID" Type="int" Nullable="false" />
+          <Property Name="sellerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="billDate" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="totalAmount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoryTable">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="int" Nullable="false" />
+          <Property Name="categoryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="categoryDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ManagerTable">
+          <Key>
+            <PropertyRef Name="managerID" />
+          </Key>
+          <Property Name="managerID" Type="int" Nullable="false" />
+          <Property Name="managerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="managerAge" Type="int" Nullable="false" />
+          <Property Name="managerPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="managerAddress" Type="varchar" MaxLength="100" />
+          <Property Name="managerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductTable">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="int" Nullable="false" />
+          <Property Name="productName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="productQuantity" Type="int" Nullable="false" />
+          <Property Name="productPrice" Type="int" Nullable="false" />
+          <Property Name="productCategory" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SellerTable">
+          <Key>
+            <PropertyRef Name="sellerID" />
+          </Key>
+          <Property Name="sellerID" Type="int" Nullable="false" />
+          <Property Name="sellerName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sellerAge" Type="int" Nullable="false" />
+          <Property Name="sellerPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sellerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="AddBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billID" Type="int" Mode="In" />
+          <Parameter Name="sellerName" Type="varchar" Mode="In" />
+          <Parameter Name="billDate" Type="varchar" Mode="In" />
+          <Parameter Name="totalAmount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categoryID" Type="int" Mode="In" />
+          <Parameter Name="categoryName" Type="varchar" Mode="In" />
+          <Parameter Name="categoryDescription" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddManager" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="managerID" Type="int" Mode="In" />
+          <Parameter Name="managerName" Type="varchar" Mode="In" />
+          <Parameter Name="managerAge" Type="int" Mode="In" />
+          <Parameter Name="managerPhone" Type="varchar" Mode="In" />
+          <Parameter Name="managerAddress" Type="varchar" Mode="In" />
+          <Parameter Name="managerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productID" Type="int" Mode="In" />
+          <Parameter Name="productName" Type="varchar" Mode="In" />
+          <Parameter Name="productQuantity" Type="varchar" Mode="In" />
+          <Parameter Name="productPrice" Type="int" Mode="In" />
+          <Parameter Name="productCategory" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="AddSeller" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sellerID" Type="int" Mode="In" />
+          <Parameter Name="sellerName" Type="varchar" Mode="In" />
+          <Parameter Name="sellerAge" Type="int" Mode="In" />
+          <Parameter Name="sellerPhone" Type="varchar" Mode="In" />
+          <Parameter Name="sellerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="DeleteBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categoryID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteManager" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="managerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteSeller" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sellerID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DisplayAllCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DisplayAllManagers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DisplayAllProducts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DisplayAllSellers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetAllBills" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetCategoryNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetManagerUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="managerName" Type="varchar" Mode="In" />
+          <Parameter Name="managerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetPdNamePriceQuantity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetPdNamePriceQuantityByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categoryName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetProductNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetProductsByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productCategory" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetSellerUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sellerName" Type="varchar" Mode="In" />
+          <Parameter Name="sellerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categoryID" Type="int" Mode="In" />
+          <Parameter Name="categoryName" Type="varchar" Mode="In" />
+          <Parameter Name="categoryDescription" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateManager" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="managerID" Type="int" Mode="In" />
+          <Parameter Name="managerName" Type="varchar" Mode="In" />
+          <Parameter Name="managerAge" Type="int" Mode="In" />
+          <Parameter Name="managerPhone" Type="varchar" Mode="In" />
+          <Parameter Name="managerAddress" Type="varchar" Mode="In" />
+          <Parameter Name="managerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateProduct" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productID" Type="int" Mode="In" />
+          <Parameter Name="productName" Type="varchar" Mode="In" />
+          <Parameter Name="productQuantity" Type="int" Mode="In" />
+          <Parameter Name="productPrice" Type="int" Mode="In" />
+          <Parameter Name="productCategory" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="UpdateSeller" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sellerID" Type="int" Mode="In" />
+          <Parameter Name="sellerName" Type="varchar" Mode="In" />
+          <Parameter Name="sellerAge" Type="int" Mode="In" />
+          <Parameter Name="sellerPhone" Type="varchar" Mode="In" />
+          <Parameter Name="sellerPassword" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="SuperMarketDBModelStoreContainer">
+          <EntitySet Name="BillTable" EntityType="Self.BillTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoryTable" EntityType="Self.CategoryTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ManagerTable" EntityType="Self.ManagerTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductTable" EntityType="Self.ProductTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SellerTable" EntityType="Self.SellerTable" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SuperMarketDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BillTable">
+          <Key>
+            <PropertyRef Name="billID" />
+          </Key>
+          <Property Name="billID" Type="Int32" Nullable="false" />
+          <Property Name="sellerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="billDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="totalAmount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoryTable">
+          <Key>
+            <PropertyRef Name="categoryID" />
+          </Key>
+          <Property Name="categoryID" Type="Int32" Nullable="false" />
+          <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ManagerTable">
+          <Key>
+            <PropertyRef Name="managerID" />
+          </Key>
+          <Property Name="managerID" Type="Int32" Nullable="false" />
+          <Property Name="managerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="managerAge" Type="Int32" Nullable="false" />
+          <Property Name="managerPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="managerAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="managerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductTable">
+          <Key>
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="productID" Type="Int32" Nullable="false" />
+          <Property Name="productName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="productQuantity" Type="Int32" Nullable="false" />
+          <Property Name="productPrice" Type="Int32" Nullable="false" />
+          <Property Name="productCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SellerTable">
+          <Key>
+            <PropertyRef Name="sellerID" />
+          </Key>
+          <Property Name="sellerID" Type="Int32" Nullable="false" />
+          <Property Name="sellerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sellerAge" Type="Int32" Nullable="false" />
+          <Property Name="sellerPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sellerPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SuperMarketDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BillTables" EntityType="Self.BillTable" />
+          <EntitySet Name="CategoryTables" EntityType="Self.CategoryTable" />
+          <EntitySet Name="ManagerTables" EntityType="Self.ManagerTable" />
+          <EntitySet Name="ProductTables" EntityType="Self.ProductTable" />
+          <EntitySet Name="SellerTables" EntityType="Self.SellerTable" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SuperMarketDBModelStoreContainer" CdmEntityContainer="SuperMarketDBEntities">
+          <EntitySetMapping Name="BillTables">
+            <EntityTypeMapping TypeName="SuperMarketDBModel.BillTable">
+              <MappingFragment StoreEntitySet="BillTable">
+                <ScalarProperty Name="billID" ColumnName="billID" />
+                <ScalarProperty Name="sellerName" ColumnName="sellerName" />
+                <ScalarProperty Name="billDate" ColumnName="billDate" />
+                <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryTables">
+            <EntityTypeMapping TypeName="SuperMarketDBModel.CategoryTable">
+              <MappingFragment StoreEntitySet="CategoryTable">
+                <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="categoryDescription" ColumnName="categoryDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManagerTables">
+            <EntityTypeMapping TypeName="SuperMarketDBModel.ManagerTable">
+              <MappingFragment StoreEntitySet="ManagerTable">
+                <ScalarProperty Name="managerID" ColumnName="managerID" />
+                <ScalarProperty Name="managerName" ColumnName="managerName" />
+                <ScalarProperty Name="managerAge" ColumnName="managerAge" />
+                <ScalarProperty Name="managerPhone" ColumnName="managerPhone" />
+                <ScalarProperty Name="managerAddress" ColumnName="managerAddress" />
+                <ScalarProperty Name="managerPassword" ColumnName="managerPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductTables">
+            <EntityTypeMapping TypeName="SuperMarketDBModel.ProductTable">
+              <MappingFragment StoreEntitySet="ProductTable">
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productQuantity" ColumnName="productQuantity" />
+                <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+                <ScalarProperty Name="productCategory" ColumnName="productCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SellerTables">
+            <EntityTypeMapping TypeName="SuperMarketDBModel.SellerTable">
+              <MappingFragment StoreEntitySet="SellerTable">
+                <ScalarProperty Name="sellerID" ColumnName="sellerID" />
+                <ScalarProperty Name="sellerName" ColumnName="sellerName" />
+                <ScalarProperty Name="sellerAge" ColumnName="sellerAge" />
+                <ScalarProperty Name="sellerPhone" ColumnName="sellerPhone" />
+                <ScalarProperty Name="sellerPassword" ColumnName="sellerPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

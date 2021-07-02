@@ -1,0 +1,44 @@
+.container{
+    background-color: lightgray;
+}
+
+ul{
+    list-style-type: none;
+    display: inline-flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    font-size: 18px;
+}
+
+li a:link, a:visited {
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+}
+  
+li a:hover, a:active {
+    background-color: aqua;
+}
+
+.container button{
+    float: right;
+    background-color: #82f0c6;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 0.2rem;
+}
+
+.container button:hover{
+    background-color: #f7c2f9;
+}

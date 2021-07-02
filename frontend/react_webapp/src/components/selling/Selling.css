@@ -1,0 +1,85 @@
+.bodyContainer{
+    width:80%;
+    margin:10px auto;
+}
+
+.productList{
+    background-color: rgb(140, 240, 140);
+    margin-bottom: 1rem;
+}
+
+.productList .selection{
+    background: transparent;
+    float: left;
+    margin-right: 15rem;
+}
+
+.orderList{
+    background-color: rgb(223, 98, 98);
+    text-align: center;  
+}
+
+.billList{
+    background-color: rgb(123, 123, 224);
+    text-align: center;
+}
+
+.inputTexts{
+    text-align:center; 
+    padding:10px; 
+    background-color: orange;
+    margin-bottom: 1rem;
+}
+
+h4{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.productList, .orderList h4{
+    padding-top: 0.5rem;
+    font-size: 16px;
+}
+
+h5{
+    margin-top: 0;
+    background-color:rgb(223, 98, 98) ;
+    padding: 5px;
+}
+
+.billList h5{
+    background-color: rgb(123, 123, 224);
+}
+
+th {
+    border:1px solid black;
+    padding:5px;
+}
+td {
+    border:1px solid black
+}
+
+h2{
+    text-align: center;
+    padding-top:10px;
+}
+
+.sellingbutton {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #f7c2f9;
+}
+      

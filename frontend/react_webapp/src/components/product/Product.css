@@ -1,0 +1,64 @@
+.bodyContainer{
+    width:80%;
+    margin:10px auto;
+}
+
+.clear{
+    clear: both;
+}
+
+.firstContainer{
+    background:#999;
+    margin-bottom:10px;
+}
+
+.secondContainer{
+    background:#999;
+    float:left;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.firstContainer table{
+    width:100%; 
+    text-align:center; 
+    padding:10px; 
+
+}
+
+.secondContainer table{
+    width:100%;
+}
+
+th {
+    border:1px solid black;
+    padding:5px;
+}
+td {
+    border:1px solid black
+}
+.secondContainer td{
+    border:none;
+}
+h2{
+    text-align: center;
+    padding-top:10px;
+}
+.button {
+    display: inline-block;
+    background-color: rgb(97, 89, 89);
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #f89898;
+}

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SuperMarketDBModelStoreContainer" CdmEntityContainer="SuperMarketDBEntities">
+    <EntitySetMapping Name="BillTables">
+      <EntityTypeMapping TypeName="SuperMarketDBModel.BillTable">
+        <MappingFragment StoreEntitySet="BillTable">
+          <ScalarProperty Name="billID" ColumnName="billID" />
+          <ScalarProperty Name="sellerName" ColumnName="sellerName" />
+          <ScalarProperty Name="billDate" ColumnName="billDate" />
+          <ScalarProperty Name="totalAmount" ColumnName="totalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryTables">
+      <EntityTypeMapping TypeName="SuperMarketDBModel.CategoryTable">
+        <MappingFragment StoreEntitySet="CategoryTable">
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="categoryDescription" ColumnName="categoryDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManagerTables">
+      <EntityTypeMapping TypeName="SuperMarketDBModel.ManagerTable">
+        <MappingFragment StoreEntitySet="ManagerTable">
+          <ScalarProperty Name="managerID" ColumnName="managerID" />
+          <ScalarProperty Name="managerName" ColumnName="managerName" />
+          <ScalarProperty Name="managerAge" ColumnName="managerAge" />
+          <ScalarProperty Name="managerPhone" ColumnName="managerPhone" />
+          <ScalarProperty Name="managerAddress" ColumnName="managerAddress" />
+          <ScalarProperty Name="managerPassword" ColumnName="managerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTables">
+      <EntityTypeMapping TypeName="SuperMarketDBModel.ProductTable">
+        <MappingFragment StoreEntitySet="ProductTable">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productQuantity" ColumnName="productQuantity" />
+          <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+          <ScalarProperty Name="productCategory" ColumnName="productCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerTables">
+      <EntityTypeMapping TypeName="SuperMarketDBModel.SellerTable">
+        <MappingFragment StoreEntitySet="SellerTable">
+          <ScalarProperty Name="sellerID" ColumnName="sellerID" />
+          <ScalarProperty Name="sellerName" ColumnName="sellerName" />
+          <ScalarProperty Name="sellerAge" ColumnName="sellerAge" />
+          <ScalarProperty Name="sellerPhone" ColumnName="sellerPhone" />
+          <ScalarProperty Name="sellerPassword" ColumnName="sellerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
